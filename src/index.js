@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import {createStore} from "redux";
 import './index.css';
 import App from './components/App';
-import movies from "./reducers";
+import rootReducer from "./reducers";
 
-const store= createStore(movies);
-console.log('store',store);
-console.log("State", store.getState());
+
+
+//movies in parameter is reducer fun
+const store= createStore(rootReducer);
 
 // store.dispatch({
 // type:'ADD_MOVIES',

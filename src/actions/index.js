@@ -1,3 +1,14 @@
+/*
+//action object this whole obj will be given to reducer
+{
+    //action type
+    type:"ADD_MOVIES",
+    movies:[m1,m2,m3] //another key
+}
+*/
+
+
+
 
 //action types
 export const ADD_MOVIES='ADD_MOVIES';

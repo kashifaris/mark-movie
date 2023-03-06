@@ -4,21 +4,24 @@ import Navbar from './Navbar';
 import MovieCard from './MovieCard';
 import { addMovies,showFavourites} from '../actions';
 
+
 class App extends React.Component {
   componentDidMount(){
     const {store}=this.props;
 
+   //this will call just after the dispatch 
     store.subscribe(()=>{
-      this.forceUpdate();
+      this.forceUpdate();//used for updating the app
     });
 
+    //used for performing action it takes action object & action obj is passed to reducer
     store.dispatch(addMovies(data));
     }
 
     isMovieFavourite =(movie)=>{
-      const {favourites}=this.props.store.getState();
-      const index=favourites.indexOf(movie);
-      if(index!=-1) return true;
+      const {movies}=this.props.store.getState();
+      const index=movies.favourites.indexOf(movie);
+      if(index!==-1) return true;
       else return false;
   }
 
@@ -28,7 +31,8 @@ class App extends React.Component {
   
 
   render(){
-  const {list,favourites,showFavourites}=this.props.store.getState();
+    const{movies,search}=this.props.store.getState();// {movies:{},search{}}
+  const {list,favourites,showFavourites}=movies;
   console.log("render",this.props.store.getState());
   const displayMovies=showFavourites? favourites:list;
  
