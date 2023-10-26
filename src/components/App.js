@@ -1,5 +1,5 @@
 import React from 'react';
-import {data} from '../../../movie-app/src/data';
+import {data} from '../data';
 import Navbar from './Navbar';
 import MovieCard from './MovieCard';
 import { addMovies,showFavourites} from '../actions';
